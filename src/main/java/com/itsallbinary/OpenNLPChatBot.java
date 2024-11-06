@@ -51,12 +51,24 @@ public class OpenNLPChatBot {
 	 * Define answers for each given category.
 	 */
 	static {
-		questionAnswer.put("greeting", "Hello, how can I help you?");
-		questionAnswer.put("product-inquiry",
-				"Product is a TipTop mobile phone. It is a smart phone with latest features like touch screen, blutooth etc.");
-		questionAnswer.put("price-inquiry", "Price is $300");
-		questionAnswer.put("conversation-continue", "What else can I help you with?");
-		questionAnswer.put("conversation-complete", "Nice chatting with you. Bbye.");
+		questionAnswer.put("greeting", "Hello, how can I assist you with your passport-related queries?");
+		questionAnswer.put("passport-application-inquiry", 
+		    "The process to apply for a passport involves filling out an application form, submitting required documents, and booking an appointment at your nearest passport office. You can also apply online through the Passport Seva Portal.");
+		questionAnswer.put("passport-status-inquiry", 
+		    "You can check your passport status online on the Passport Seva Portal by entering your application number. It will show you the current status of your application.");
+		questionAnswer.put("document-requirements", 
+		    "For a passport application, you typically need a proof of identity, proof of address, a birth certificate, and recent passport-sized photographs. Specific requirements may vary based on your application type.");
+		questionAnswer.put("fees-inquiry", 
+		    "The fees for a new passport vary based on the type of passport and processing speed. Generally, the cost for a regular passport is around INR 1,500 for a 36-page passport and INR 3,500 for a 60-page passport.");
+		questionAnswer.put("appointment-inquiry", 
+		    "You can book an appointment for a passport application through the Passport Seva Portal. Choose your preferred date and time based on availability.");
+		questionAnswer.put("passport-renewal-inquiry", 
+		    "To renew your passport, you need to fill out a renewal application form, submit the necessary documents, and pay the renewal fee. You can apply online or visit the passport office directly.");
+		questionAnswer.put("helpdesk-query", 
+		    "You can reach out to the passport helpline at 1800 258 1800 for assistance with any passport-related issues. They are available to help you with your queries.");
+		questionAnswer.put("conversation-complete", 
+		    "Thank you for reaching out! If you have any more questions in the future, feel free to contact us. Have a great day!");
+
 
 	}
 
