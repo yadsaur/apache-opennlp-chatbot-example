@@ -11,6 +11,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,6 +52,18 @@ public class VoiceController {
     
     @Autowired
     private OpenNLPLocal openNLPLocal;
+    
+    @CrossOrigin(origins = "*") 
+    @PostMapping("/tts")
+    public String tts(@RequestBody String content) throws Exception {
+
+    	String requestBody = ttsRequest("en", SERVICE_ID_TTS_EN, content).toString();
+        PipelineResponse pipelineResponse = makeApiCall(requestBody);
+        String answerWav = pipelineResponse.getPipelineResponse().get(0).getAudio().get(0).getAudioContent();
+
+        return answerWav;
+    }
+
 
     @PostMapping("/sendRequest")
     public ResponseEntity<String> sendRequest(@RequestBody String requestBody) throws FileNotFoundException, IOException, InterruptedException {
